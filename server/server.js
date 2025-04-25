@@ -1,9 +1,8 @@
-const http = require('http');
+const express = require('express')
+const server = express()
 
-const server = http.createServer((req, res) => {
-  res.end('Hello, Node!\n');
-});
+server.get('/', (req, res) => {
+  res.send('Hello Express!')
+})
 
-server.listen(3000, '127.0.0.1', () => {
-  console.log('Servidor rodando em http://127.0.0.1:3000');
-});
+server.listen(3000);
