@@ -20,8 +20,12 @@ async function run() {
     const database = client.db('testdb'); // nome do banco
     const collection = database.collection('testcollection'); // nome da coleção
 
-    await collection.insertOne({ greeting: 'Hello Mongo' }, () => client.close());
+    await collection.insertOne({ greeting: 'Hello Mongo!' })
     console.log("Documento inserido com sucesso!");
+
+    collection
+      .findOne({ greeting: 'Hello Mongo!'})
+      .then((document) => console.log(document.greeting))
   } catch(err){
     console.log("Ocorreu um erro: ", err);
   }
