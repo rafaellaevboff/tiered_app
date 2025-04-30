@@ -5,4 +5,6 @@ server.get('/', (req, res) => {
   res.send('Hello Express!')
 })
 
-server.listen(3000);
+var port  = 3001
+
+server.listen(port);
